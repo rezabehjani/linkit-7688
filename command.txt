@@ -1,0 +1,146 @@
+http://mylinkit.local/
+https://github.com/openwrt-mirror/openwrt/blob/master/target/linux/brcm2708/patches-4.4/0063-ASoC-Add-support-for-PCM5102A-codec.patch
+
+
+user root 
+pass 123456
+opkg update
+opkg install kmod-sound-core kmod-usb-audio madplay
+opkg list-installed
+
+
+github///////////
+hifiberry boards github	
+https://github.com/hifiberry/hifiberry-dsp
+pip install --upgrade hifiberrydsp
+
+
+opkg remove --force-depends kmod-sound-mtk
+
+https://github.com/GothAck/hifimems-kmod
+
+opkg install kmod-sound-soc-hifiberry-amp
+
+lsmod|grep i2s
+
+opkg install nano
+
+alsamixer
+
+alsa
+
+ Hifiberry DAC
+ aplay -l
+ 
+ kmod-sound-soc-hifiberry-amp
+ 
+ vim /usr/share/alsa/alsa.conf
+ 
+ 
+https://www.cirrus.com/products/wm8960/
+
+
+https://raspberrypi.stackexchange.com/questions/76188/how-to-make-pcm5102-dac-work-on-raspberry-pi-zerow
+
+
+root@mylinkit:~# aplay -l
+**** List of PLAYBACK Hardware Devices ****
+card 0: I2S [MTK APSoC I2S], device 0: WMserious PCM wm8960-hifi-0 []
+  Subdevices: 0/1
+  Subdevice #0: subdevice #0
+
+
+MP3 playback
+To play a MP3 file, use madplay:
+
+# madplay "path_to_your_mp3_file"
+WAV playback
+To play a WAV file, use aplay, as shown below:
+
+# aplay -M "path_to_your_wav_file"  
+
+
+https://www.electrodragon.com/product/pcm5102-i2s-iis-stereo-dac-codec-board/
+
++----------+---------------+---------------------------+-----------+
+| Phat DAC | Rpi Broadcom  | Odroid-C2 I2S             | PCM5102a  |
+|  12 I2S  |  18 PCM_CLK   | 6 I2S SCLK (Bit Clock)    | 13 BCK    |
+|  40 I2S  |  21 PCM_DOUT  | 7 I2S Data Out (for DAC)  | 14 DIN    |
+|  35 I2S  |  19 PCM_FS    | 5 I2S LRCLK (LR Clock)    | 15 LRCK   |
++----------+---------------+---------------------------+-----------+
+
+
+volumio@audio:~$ aplay -l
+**** List of PLAYBACK Hardware Devices ****
+card 0: ALSA [bcm2835 ALSA], device 0: bcm2835 ALSA [bcm2835 ALSA]
+  Subdevices: 8/8
+  Subdevice #0: subdevice #0
+  Subdevice #1: subdevice #1
+  Subdevice #2: subdevice #2
+  Subdevice #3: subdevice #3
+  Subdevice #4: subdevice #4
+  Subdevice #5: subdevice #5
+  Subdevice #6: subdevice #6
+  Subdevice #7: subdevice #7
+card 0: ALSA [bcm2835 ALSA], device 1: bcm2835 ALSA [bcm2835 IEC958/HDMI]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: sndrpihifiberry [snd_rpi_hifiberry_dac], device 0: HifiBerry DAC HiFi pcm5102a-hifi-0 []
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+  
+  
+snd_soc_bcm2708_i2s
+bcm2708_dmaengine
+snd_soc_pcm5102a
+snd_soc_hifiberry_dac
+
+https://github.com/MediaTek-Labs/linkit-smart-7688-feed
+
+https://github.com/openwrt/chaos_calmer
+
+https://www.mail-archive.com/openwrt-devel@lists.openwrt.org/msg32677.html
+https://github.com/rern/RuneOS/tree/master/srv/http/settings/i2s
+
+https://github.com/guussie/PiDS/wiki/09.-How-to-make-various-DACs-work
+https://github.com/thenaran/linux-rpi/blob/master/sound/soc/bcm/hifiberry_dac.c
+https://github.com/conceptacid/hifiberry-player
+
+https://github.com/eq-3/RaspberryMatic/tree/master/linux-4.1/arch/arm/boot/dts/overlays
+
+
+
+https://learn.pimoroni.com/tutorial/phat/raspberry-pi-phat-dac-install
+
+https://github.com/adafruit/rpi-firmware/tree/master/modules/3.15.8%2B/kernel/sound/soc/codecs
+https://github.com/search?q=snd-soc-pcm512x.c&type=Code
+
+
+
+https://processors.wiki.ti.com/index.php/Sitara_Linux_Audio_DAC_Example
+https://patchwork.kernel.org/patch/9089541/
+
+
+/ SPDX-License-Identifier: GPL-2.0-only
+/*
+ * Driver for the PCM5102A codec
+ *
+ * Author:	Florian Meier <florian.meier@koalo.de>
+ *		Copyright 2013
+ */
+ 
+ 
+ cat /etc/openwrt_release
+
+opkg install kmod-fs-ext4
+
+https://docs.labs.mediatek.com/resource/linkit-smart-7688/en/tutorials/firmware-and-bootloader/rebuilding-the-existing-kernel-packages
+
+https://openwrt.org/docs/guide-developer/build-system/use-buildsystem
+https://docs.labs.mediatek.com/resource/linkit-smart-7688/en/downloads
+
+https://github.com/MediaTek-Labs/linkit-smart-7688-uboot
+https://docs.labs.mediatek.com/resource/linkit-smart-7688/en/tutorials/firmware-and-bootloader/build-the-bootloader
+
+
+
