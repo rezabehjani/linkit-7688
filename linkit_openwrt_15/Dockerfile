@@ -57,7 +57,7 @@ WORKDIR /usr/src/openwrt
 
 RUN cd /usr/src/openwrt
 
-RUN git clone https://github.com/openwrt/chaos_calmer.git openwrt
+RUN git clone https://github.com/openwrt/chaos_calmer.git /usr/src/openwrt
 
 RUN cp feeds.conf.default /usr/src/feeds.conf
 
