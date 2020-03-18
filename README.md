@@ -2,6 +2,9 @@
 
 * compile 
 ```
+#for download dependency make
+sudo make download
+
 #openwrt 15
 sudo make -j1 V=s -i
 
